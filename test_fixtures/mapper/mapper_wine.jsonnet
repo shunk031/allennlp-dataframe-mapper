@@ -1,0 +1,21 @@
+{
+    "type": "default",
+    "features": [
+        [["alcohol"], {"type": "standard-scalar"}, {"alias": "alcohol_standard_scalar"}],
+        [["alcohol"], {"type": "min-max-scalar"}, {"alias": "alcohol_min_max_scalar"}],
+        [["malic_acid"], null],
+        [["ash"], null],
+        [["alcalinity_of_ash"], null],
+        [["magnesium"], [{"type": "logarithmer"}, {"type": "standard-scalar"}], {"alias": "magnesium_log_standard_scalar"}],
+        [["magnesium"], [{"type": "logarithmer"}, {"type": "min-max-scalar"}], {"alias": "magnesium_log_min_max_scalar"}],
+        [["total_phenols"], null],
+        [["flavanoids"], null],
+        [["nonflavanoid_phenols"], null],
+        [["proanthocyanins"], null],
+        [["color_intensity"], null],
+        [["hue"], null],
+        [["od280/od315_of_diluted_wines"], null],
+        [["proline"], {"type": "logarithmer"}],
+    ],
+    "df_out": true,
+}
