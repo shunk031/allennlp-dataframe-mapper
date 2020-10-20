@@ -11,6 +11,6 @@
 $ pip install git+ssh://git@github.com/shunk031/allennlp-dataframe-mapper.git
 ```
 
-## LICENCE
+## LICENSE
 
 MIT
