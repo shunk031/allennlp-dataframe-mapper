@@ -31,7 +31,15 @@ def _build_feature(
 class DataFrameMapper(_DataFrameMapper, Registrable):
     def __init__(
         self,
-        features: List[Union[List[str], List[List[str]], List[RegistrableTransform]]],
+        features: List[
+            Union[
+                List[str],
+                List[List[str]],
+                Optional[RegistrableTransform],
+                Optional[List[RegistrableTransform]],
+                Optional[Dict[str, str]],
+            ],
+        ],
         default: bool = False,
         sparse: bool = False,
         df_out: bool = False,
