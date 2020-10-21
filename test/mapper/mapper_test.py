@@ -5,10 +5,10 @@ from allennlp.common import Params
 from allennlp_dataframe_mapper.common.testing import AllenNlpDataFrameMapperTestCase
 from allennlp_dataframe_mapper.mapper import DataFrameMapper
 from allennlp_dataframe_mapper.transforms import (
-    FlattenTransform,
+    FlattenTransformer,
     LabelEncoder,
     Logarithmer,
-    MinMaxScalar,
+    MinMaxScaler,
     StandardScaler,
 )
 from sklearn.datasets import load_iris, load_wine
@@ -46,7 +46,7 @@ class TestMapper(AllenNlpDataFrameMapperTestCase):
         assert features[3] == (["petal width (cm)"], None, {})
 
         assert features[4][0] == ["species"]
-        assert isinstance(features[4][1][0], FlattenTransform)
+        assert isinstance(features[4][1][0], FlattenTransformer)
         assert isinstance(features[4][1][1], LabelEncoder)
         assert features[4][2] == {}
 
@@ -69,7 +69,7 @@ class TestMapper(AllenNlpDataFrameMapperTestCase):
         assert features[0][2] == {"alias": "alcohol_standard_scalar"}
 
         assert features[1][0] == ["alcohol"]
-        assert isinstance(features[1][1], MinMaxScalar)
+        assert isinstance(features[1][1], MinMaxScaler)
         assert features[1][2] == {"alias": "alcohol_min_max_scalar"}
 
         assert features[2] == (["malic_acid"], None, {})
@@ -83,7 +83,7 @@ class TestMapper(AllenNlpDataFrameMapperTestCase):
 
         assert features[6][0] == ["magnesium"]
         assert isinstance(features[6][1][0], Logarithmer)
-        assert isinstance(features[6][1][1], MinMaxScalar)
+        assert isinstance(features[6][1][1], MinMaxScaler)
         assert features[6][2] == {"alias": "magnesium_log_min_max_scalar"}
 
         assert features[7] == (["total_phenols"], None, {})
