@@ -1,7 +1,9 @@
 # AllenNLP integration for sklearn-pandas
 
 ![CI](https://github.com/shunk031/allennlp-dataframe-mapper/workflows/CI/badge.svg?branch=master)
-![Release](https://github.com/shunk031/allennlp-dataframe-mapper/workflows/Release/badge.svg?branch=master)
+![Release](https://github.com/shunk031/allennlp-dataframe-mapper/workflows/Release/badge.svg)
+![Python](https://img.shields.io/badge/python-3.7%20%7C%203.8-blue?logo=python)
+[![PyPI](https://img.shields.io/pypi/v/allennlp-dataframe-mapper.svg)](https://pypi.python.org/pypi/allennlp-dataframe-mapper)
 
 `allennlp-dataframe-mapper` is a Python library that provides [AllenNLP](https://github.com/allenai/allennlp) integration for [sklearn-pandas](https://github.com/scikit-learn-contrib/sklearn-pandas).
 
