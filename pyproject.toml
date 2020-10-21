@@ -1,7 +1,11 @@
 [tool.poetry]
 name = "allennlp-dataframe-mapper"
-version = "0.1.0"
+version = "0.0.0" # using poetry-dynamic-versioning
+license = "MIT"
+readme = "README.md"
 description = ""
+homepage = "https://github.com/shunk031/allennlp-dataframe-mapper"
+repository = "https://github.com/shunk031/allennlp-dataframe-mapper"
 authors = ["Shunsuke KITADA <shunsuke.kitada.0831@gmail.com>"]
 
 [tool.poetry.dependencies]
@@ -18,3 +22,6 @@ mypy = "^0.790"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-dynamic-versioning]
+enable = true
