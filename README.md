@@ -1,22 +1,26 @@
-# sklearn-pandas plugin for AllenNLP
+# AllenNLP integration for sklearn-pandas
 
-![Python 3.7](https://img.shields.io/badge/python-3.7%2B-brightgreen.svg)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![CI](https://github.com/shunk031/allennlp-dataframe-mapper/workflows/CI/badge.svg?branch=master)
+![Release](https://github.com/shunk031/allennlp-dataframe-mapper/workflows/Release/badge.svg?branch=master)
 
+`allennlp-dataframe-mapper` is a Python library that provides [AllenNLP](https://github.com/allenai/allennlp) integration for [sklearn-pandas](https://github.com/scikit-learn-contrib/sklearn-pandas).
 
-[sklearn-pandas](https://github.com/scikit-learn-contrib/sklearn-pandas) plugin / wrapper for [AllenNLP](https://github.com/allenai/allennlp).
+## Installation
 
-## Install
+Installing the library and dependencies is simple using `pip`.
 
 ```sh
-$ pip install git+ssh://git@github.com/shunk031/allennlp-dataframe-mapper.git
+$ pip allennlp-dataframe-mapper
 ```
 
-## Usage
+## Example
+
+This library enables users to specify the in a jsonnet config file.
+Here is an example of the mapper for a famous [iris dataset](https://archive.ics.uci.edu/ml/datasets/iris).
 
 ### Config
 
-`mapper_iris.jsonnet`
+`allennlp-dataframe-mapper` is specified the transformations of the mapper in `jsonnet` config file like following `mapper_iris.jsonnet`:
 
 ```json
 {
@@ -34,6 +38,9 @@ $ pip install git+ssh://git@github.com/shunk031/allennlp-dataframe-mapper.git
 
 ### Mapper
 
+The mapper takes a params of transformations from the config file.
+We can use the `fit_transform` shortcut to bot fit the mapper and see what transformed data.
+
 ```python
 from allennlp.common import Params
 from allennlp_dataframe_mapper import DataFrameMapper
@@ -47,7 +54,7 @@ print(mapper)
 #                           (['sepal width (cm)'], None, {}),
 #                           (['petal length (cm)'], None, {}),
 #                           (['petal width (cm)'], None, {}),
-#                           (['species'], [FlattenTransform(), LabelEncoder()], {})])
+#                           (['species'], [FlattenTransformer(), LabelEncoder()], {})])
 
 mapper.fit_transform(df)
 ```
