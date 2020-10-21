@@ -1,13 +1,13 @@
 {
     "type": "default",
     "features": [
-        [["alcohol"], {"type": "standard-scalar"}, {"alias": "alcohol_standard_scalar"}],
-        [["alcohol"], {"type": "min-max-scalar"}, {"alias": "alcohol_min_max_scalar"}],
+        [["alcohol"], {"type": "standard-scaler"}, {"alias": "alcohol_standard_scalar"}],
+        [["alcohol"], {"type": "min-max-scaler"}, {"alias": "alcohol_min_max_scalar"}],
         [["malic_acid"], null],
         [["ash"], null],
         [["alcalinity_of_ash"], null],
-        [["magnesium"], [{"type": "logarithmer"}, {"type": "standard-scalar"}], {"alias": "magnesium_log_standard_scalar"}],
-        [["magnesium"], [{"type": "logarithmer"}, {"type": "min-max-scalar"}], {"alias": "magnesium_log_min_max_scalar"}],
+        [["magnesium"], [{"type": "logarithmer"}, {"type": "standard-scaler"}], {"alias": "magnesium_log_standard_scalar"}],
+        [["magnesium"], [{"type": "logarithmer"}, {"type": "min-max-scaler"}], {"alias": "magnesium_log_min_max_scalar"}],
         [["total_phenols"], null],
         [["flavanoids"], null],
         [["nonflavanoid_phenols"], null],

@@ -1,0 +1,3 @@
+{
+    "type": "min-max-scaler"
+}
