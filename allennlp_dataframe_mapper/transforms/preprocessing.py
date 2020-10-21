@@ -20,19 +20,21 @@ class StandardScaler(_StandardScaler):
 
 @RegistrableTransform.register("min-max-scaler")
 class MinMaxScaler(_MinMaxScaler):
-    def __init__(self, feature_range: Tuple[int, int] = (0, 1), copy: bool = True):
+    def __init__(
+        self, feature_range: Tuple[int, int] = (0, 1), copy: bool = True
+    ) -> None:
         super().__init__(feature_range=feature_range, copy=copy)
 
 
 @RegistrableTransform.register("label-encoder")
 class LabelEncoder(_LabelEncoder):
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
 
 @RegistrableTransform.register("logarithmer")
 class Logarithmer(RegistrableTransform):
-    def fit(self, X) -> "Logarithmer":
+    def fit(self, X):
         return self
 
     def transform(self, X):
@@ -44,7 +46,7 @@ class Logarithmer(RegistrableTransform):
 
 @RegistrableTransform.register("flatten")
 class FlattenTransformer(RegistrableTransform):
-    def fit(self, X) -> "FlattenTransformer":
+    def fit(self, X):
         return self
 
     def transform(self, X):

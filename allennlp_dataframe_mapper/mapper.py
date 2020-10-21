@@ -15,11 +15,18 @@ def _build_transforms(transforms: Union[Params, List[Params]]):
 
 
 def _build_feature(
-    columns: List[Union[List[str], List[List[str]], List[RegistrableTransform]]],
+    columns: List[Union[List[str], List[List[str]]]],
     transforms: Union[Params, List[Params]],
     options: Optional[Params] = None,
 ) -> Tuple[
-    str, Union[RegistrableTransform, List[RegistrableTransform]], Dict[str, str]
+    List[
+        Union[
+            List[str],
+            List[List[str]],
+        ],
+    ],
+    Union[RegistrableTransform, List[RegistrableTransform]],
+    Dict[str, str],
 ]:
     if options is None:
         options = {}
@@ -45,9 +52,13 @@ class DataFrameMapper(_DataFrameMapper, Registrable):
         df_out: bool = False,
         input_df: bool = False,
     ):
-        features = [_build_feature(*f) for f in features]
+        build_features = [_build_feature(*f) for f in features]
         super().__init__(
-            features, default=default, sparse=sparse, df_out=df_out, input_df=input_df
+            build_features,
+            default=default,
+            sparse=sparse,
+            df_out=df_out,
+            input_df=input_df,
         )
 
 
