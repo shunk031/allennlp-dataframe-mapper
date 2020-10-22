@@ -8,3 +8,6 @@ class RegistrableTransform(BaseEstimator, TransformerMixin, Registrable):
 
     def transform(self, *args, **kwargs):
         raise NotImplementedError
+
+    def inverse_transform(self, *args, **kwargs):
+        raise NotImplementedError

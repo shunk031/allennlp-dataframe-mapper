@@ -40,8 +40,8 @@ Here is an example of the mapper for a famous [iris dataset](https://archive.ics
 
 ### Mapper
 
-The mapper takes a params of transformations from the config file.
-We can use the `fit_transform` shortcut to bot fit the mapper and see what transformed data.
+The mapper takes a param of transformations from the config file.
+We can use the `fit_transform` shortcut to both fit the mapper and see what transformed data.
 
 ```python
 from allennlp.common import Params
