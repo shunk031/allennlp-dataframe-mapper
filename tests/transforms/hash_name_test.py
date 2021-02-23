@@ -1,8 +1,8 @@
+import numpy as np
 import pytest
 from allennlp.common import Params
 from allennlp_dataframe_mapper.common.testing import AllenNlpDataFrameMapperTestCase
-from allennlp_dataframe_mapper.transforms import RegistrableTransform
-from allennlp_dataframe_mapper.transforms.hash_name import HashName
+from allennlp_dataframe_mapper.transforms import HashName, RegistrableTransform
 
 
 class TestHashName(AllenNlpDataFrameMapperTestCase):
@@ -23,10 +23,26 @@ class TestHashName(AllenNlpDataFrameMapperTestCase):
     def test_hash_name(self, url, expected):
         hash_name = HashName()
         url_hashed = hash_name.transform(url)
-        assert isinstance(url_hashed, expected)
+
+        expected_np = np.array(expected)
+        assert np.array_equal(url_hashed, expected_np)
+
+    def test_hash_names(self):
+
+        urls = ["http://example.com/", "http://abehiroshi.la.coocan.jp/"]
+        hash_name = HashName()
+        url_hashed = hash_name.transform(urls)
+
+        expected = np.array(
+            [
+                "a6bf1757fff057f266b697df9cf176fd",
+                "99daa109463db188c4160ee06a6ca8f7",
+            ]
+        )
+        assert np.array_equal(url_hashed, expected)
 
     @pytest.mark.parametrize(
-        "exp, url, expected",
+        "ext, url, expected",
         (
             (".png", "http://example.com/", "a6bf1757fff057f266b697df9cf176fd"),
             (
@@ -39,4 +55,6 @@ class TestHashName(AllenNlpDataFrameMapperTestCase):
     def test_hash_name_with_ext(self, ext, url, expected):
         hash_name = HashName(ext=ext)
         url_hashed = hash_name.transform(url)
-        assert isinstance(url_hashed, expected + ext)
+
+        expected_np = np.array(expected + ext)
+        assert np.array_equal(url_hashed, expected_np)
