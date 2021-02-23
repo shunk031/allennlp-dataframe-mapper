@@ -15,6 +15,7 @@ class TestRegistrableTransform(AllenNlpDataFrameMapperTestCase):
                 "label-encoder",
                 "logarithmer",
                 "flatten",
+                "hashname",
             ]
         )
 
@@ -25,3 +26,4 @@ class TestRegistrableTransform(AllenNlpDataFrameMapperTestCase):
         assert RegistrableTransform.by_name("label-encoder").__name__ == "LabelEncoder"
         assert RegistrableTransform.by_name("logarithmer").__name__ == "Logarithmer"
         assert RegistrableTransform.by_name("flatten").__name__ == "FlattenTransformer"
+        assert RegistrableTransform.by_name("hashname").__name__ == "HashName"
