@@ -12,7 +12,7 @@
 Installing the library and dependencies is simple using `pip`.
 
 ```sh
-$ pip allennlp-dataframe-mapper
+$ pip install allennlp-dataframe-mapper
 ```
 
 ## Example
