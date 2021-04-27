@@ -10,7 +10,7 @@ authors = ["Shunsuke KITADA <shunsuke.kitada.0831@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-allennlp = "~=2.0.0"
+allennlp = "~=2.4.0"
 sklearn-pandas = "^2.0.2"
 
 [tool.poetry.dev-dependencies]
