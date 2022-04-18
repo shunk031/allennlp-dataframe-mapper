@@ -15,7 +15,7 @@ sklearn-pandas = "^2.0.2"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
-black = "^20.8b1"
+black = "^22.3"
 isort = "^5.6.4"
 mypy = "^0.790"
 
