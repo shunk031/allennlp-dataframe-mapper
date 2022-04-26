@@ -3,7 +3,6 @@ from typing import Optional
 
 import numpy as np
 from allennlp_dataframe_mapper.transforms import RegistrableTransform
-from overrides import overrides
 
 
 @RegistrableTransform.register("hashname")
@@ -18,10 +17,8 @@ class HashName(RegistrableTransform):
             return hash_name + self._ext
         return hash_name
 
-    @overrides
     def fit(self, *args, **kwargs):
         return self
 
-    @overrides
     def transform(self, X):
         return np.vectorize(self.to_hash_name)(X)
