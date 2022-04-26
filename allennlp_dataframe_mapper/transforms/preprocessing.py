@@ -3,7 +3,6 @@ from typing import Tuple
 
 import numpy as np
 from allennlp_dataframe_mapper.transforms import RegistrableTransform
-from overrides import overrides
 from sklearn.preprocessing import LabelEncoder as _LabelEncoder
 from sklearn.preprocessing import MinMaxScaler as _MinMaxScaler
 from sklearn.preprocessing import StandardScaler as _StandardScaler
@@ -35,25 +34,20 @@ class LabelEncoder(_LabelEncoder):
 
 @RegistrableTransform.register("logarithmer")
 class Logarithmer(RegistrableTransform):
-    @overrides
     def fit(self, X):
         return self
 
-    @overrides
     def transform(self, X):
         return np.log1p(X)
 
-    @overrides
     def inverse_transform(self, X):
         return np.expm1(X)
 
 
 @RegistrableTransform.register("flatten")
 class FlattenTransformer(RegistrableTransform):
-    @overrides
     def fit(self, X):
         return self
 
-    @overrides
     def transform(self, X):
         return X.flatten()
